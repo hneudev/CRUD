@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 const BasicModal = ({ onCreate, defValues, onEdit }) => {
 
   const { register, handleSubmit, reset } = useForm()
-  const [buttonMode, setButtonMode] = useState(false)
   const emptyValues = {
     first_name: "",
     last_name: "",
@@ -13,16 +12,11 @@ const BasicModal = ({ onCreate, defValues, onEdit }) => {
     birthday: ""
 
   }
-  const [modalState, setModalState] = useState(false);
-  
-  const toggleModalState = () => {
-    setModalState(!modalState);
-  };
+
 
   useEffect(() => {
     if(defValues){
       reset(defValues)
-      setButtonMode(!buttonMode)
     }
   }, [reset, defValues])
 
@@ -30,7 +24,6 @@ const BasicModal = ({ onCreate, defValues, onEdit }) => {
       onCreate(res)
       onEdit(res)
       reset(emptyValues)
-      setButtonMode(!buttonMode)
 
   }
     return(     
@@ -48,7 +41,7 @@ const BasicModal = ({ onCreate, defValues, onEdit }) => {
 <input type="password" placeholder='password' id='password' {...register("password")} />
 <label htmlFor="birthday">Birthday      </label>
 <input type="date" placeholder='birthday' id='birthday' {...register("birthday")} />
-<button className='button-upload'>{buttonMode ? "Register" : "Edit"}</button>
+<button className='button-upload'>Register</button>
 </form>
 </div>
 
