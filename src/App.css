@@ -1,0 +1,93 @@
+.App {
+  text-align: center;
+  padding: 5% 20%
+}
+.App button:not(.exitButton) {
+  padding: 13px 35px;
+  background: #22c39f;
+  border-radius: 30px;
+  font-size: 18px;
+  color: #fff;
+  border: none;
+}
+.modalBackground {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  transition: opacity 0.4s ease-in-out;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+
+}
+.modalShowing-true{
+  opacity:1;
+  pointer-events: visible;
+}
+.modalInner {
+  background: #1e2939;
+  width: 900px;
+  max-width: calc(100%-60px);
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  color: #fff;
+  filter: drop-shadow(2px 4px 8px #585858);
+
+}
+.modalText{
+  padding: 15px;
+}
+.modalText p{
+line-height: 180%;
+}
+.modalText button {
+  display:block;
+  width: 100%;
+  text-align: center;
+}
+.modalImage img{
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+  border-radius: 15px;
+}
+.exitButton {
+  padding:15px;
+  display:block;
+  width: 100%;
+  background-color: transparent;
+  border: 0;
+  color: #fff;
+}
+
+.gradient-border {
+  border: solid 5px transparent;
+  border-radius: 20px;
+  background-image: linear-gradient(#1e2939, rgb(68, 94, 114)), 
+    linear-gradient(315deg,#833ab4,#fd1d1d 50%,#fcb045);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+.actionButton {
+  cursor: pointer;
+}
+input {
+  width: 80%;
+  margin: 5%;
+  padding: 5%;
+  border-radius: 15px;
+  border: none;
+}
+
+@media (max-width:500px) {
+  .modalImage {
+    display:none;
+  }
+}
