@@ -1,5 +1,5 @@
 import { useForm } from 'react-hook-form';
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const BasicModal = ({ onCreate, defValues, onEdit }) => {
 
